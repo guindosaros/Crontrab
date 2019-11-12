@@ -33,3 +33,24 @@ CRONJOBS = [
     ('*/3 * * * *', 'myapp.cron.nanus')
 ]
 ```
+
+- Enfin, exécutez cette commande pour ajouter tous les travaux définis de CRONJOBS à crontab (de l'utilisateur avec lequel vous exécutez cette commande):
+```python
+python manage.py crontab add
+```
+- Apres avoir lancer le contrab vas generer genener un code
+que l'on devra copier 
+comme ceci:
+```python
+  adding cronjob: (964787d1407926910a1660d5aabdfa05) -> ('*/1 * * * *', 'myapp.cron.nanus')
+```
+- lancer cette commande pour le crontab 
+```python
+  python manage.py crontab run 964787d1407926910a1660d5aabdfa05
+```
+- nb a chaque modification du relancer la commande 
+```python
+  python manage.py crontab remove
+```
+- ensuite la commande add et lancer le run
+
